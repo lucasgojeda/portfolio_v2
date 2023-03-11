@@ -117,12 +117,12 @@ const CustomTextField = styled(TextField)(({ theme }) => ({
   background: '#f0f0f0',
   borderRadius: '5px',
 
-  '& .css-ovklgm-MuiInputBase-root-MuiOutlinedInput-root': {
+  '& .MuiInputBase-root-MuiOutlinedInput-root': {
     fontSize: '0.9rem',
     fontWeight: 700,
     fontFamily: 'Source Sans Pro, sans-serif',
   },
-  '& .css-1d3z3hw-MuiOutlinedInput-notchedOutline': {
+  '& .MuiOutlinedInput-notchedOutline': {
     display: 'none',
   },
   ':focus-visible': {
@@ -140,12 +140,12 @@ const MessageCustomTextField = styled(TextField)(({ theme }) => ({
   background: '#f0f0f0',
   borderRadius: '5px',
 
-  '& .css-iwu91r-MuiInputBase-root-MuiOutlinedInput-root': {
+  '& .MuiInputBase-root-MuiOutlinedInput-root': {
     fontSize: '0.9rem',
     fontWeight: 700,
     fontFamily: 'Source Sans Pro, sans-serif',
   },
-  '& .css-1d3z3hw-MuiOutlinedInput-notchedOutline': {
+  '& .MuiOutlinedInput-notchedOutline': {
     display: 'none',
   },
   ':focus-visible': {

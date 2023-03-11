@@ -131,6 +131,7 @@ const CopyrightContainer = styled('div')(({ theme }) => ({
   color: '#fff',
   borderTop: '1px solid #444',
   display: 'flex',
+  flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
 }))
@@ -144,6 +145,10 @@ const FontCopyright = styled(Typography)(({ theme }) => ({
   letterSpacing: '1px',
 }))
 
+const RamLink = styled('a')(({ theme }) => ({
+  color: '#facf0f',
+}))
+
 export const Footer = (): JSX.Element => {
   return (
     <FooterComponent>
@@ -152,9 +157,9 @@ export const Footer = (): JSX.Element => {
           <ContentContainer>
             <FontName>LUCAS OJEDA</FontName>
             <FontDescription>
-              A Frontend focused Web Developer building the Frontend of Websites
-              and Web Applications that leads to the success of the overall
-              product
+              A FullStack web developer focused on building the frontend and
+              backend of websites and web applications leading to the success of
+              the overall product.
             </FontDescription>
           </ContentContainer>
           <ContactsContainer>
@@ -192,6 +197,16 @@ export const Footer = (): JSX.Element => {
           </ContactsContainer>
         </SectionsContainer>
         <CopyrightContainer>
+          <FontCopyright>
+            Inspirated on{' '}
+            <RamLink
+              rel="noreferrer"
+              target="_blank"
+              href="https://rammaheshwari.com"
+            >
+              Ram Maheshwari
+            </RamLink>
+          </FontCopyright>
           <FontCopyright>© Copyright 2023. Made by Lucas Ojeda</FontCopyright>
         </CopyrightContainer>
       </FooterContainer>

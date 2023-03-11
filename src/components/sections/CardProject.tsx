@@ -71,22 +71,63 @@ const FontDescription = styled(Typography)(({ theme }) => ({
   },
 }))
 
-const ButtonContact = styled(Button)(({ theme }) => ({
-  width: '20vw',
+const LinksContainer = styled('div')(({ theme }) => ({
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  gap: '5%',
+  [theme.breakpoints.down('md')]: {
+    // alignItems: 'center',
+    // width: '75%',
+  },
+}))
+
+const DemoLink = styled('a')(({ theme }) => ({
+  width: '15vw',
   height: '8vh',
   marginTop: '5vh',
-  fontSize: '0.9rem',
+  fontSize: '1rem',
   fontWeight: 750,
-  boxShadow: '0 5px 15px 0 rgb(0 0 0 / 15%)',
+  textDecoration: 'none',
   borderRadius: '5px',
   color: '#fff',
+  backgroundColor: theme.palette.primary.main,
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
   ':hover': {
-    backgroundColor: theme.palette.primary.main,
-    color: '#fff',
+    boxShadow: '0 5px 15px 0 rgb(0 0 0 / 15%)',
+    transition: 'all ease 0.3s',
   },
   [theme.breakpoints.down('sm')]: {
-    width: '5rem',
-    height: '2.5rem',
+    width: '6rem',
+    height: '3rem',
+    borderRadius: '7.5px',
+  },
+}))
+
+const GithubLink = styled('a')(({ theme }) => ({
+  width: '15vw',
+  height: '8vh',
+  marginTop: '5vh',
+  fontSize: '1rem',
+  fontWeight: 750,
+  textDecoration: 'none',
+  borderRadius: '5px',
+  color: '#fff',
+  backgroundColor: '#000',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  ':hover': {
+    boxShadow: '0 5px 15px 0 rgb(0 0 0 / 15%)',
+    transition: 'all ease 0.3s',
+  },
+  [theme.breakpoints.down('sm')]: {
+    width: '6rem',
+    height: '3rem',
+    borderRadius: '7.5px',
   },
 }))
 
@@ -95,16 +136,31 @@ interface Props {
   title: string
   description: string
   img: string
+  demoLink: string
+  githubLink: string
 }
 
-export const CardProject: React.FC<Props> = ({ title, description, img }) => {
+export const CardProject: React.FC<Props> = ({
+  title,
+  description,
+  img,
+  demoLink,
+  githubLink,
+}) => {
   return (
     <MainContainer>
       <Image src={img} alt="Project image" />
       <ContentContainer>
         <FontTitle>{title}</FontTitle>
         <FontDescription>{description}</FontDescription>
-        <ButtonContact variant="contained">DEMO</ButtonContact>
+        <LinksContainer>
+          <DemoLink rel="noreferrer" href={demoLink} target="_blank">
+            DEMO
+          </DemoLink>
+          <GithubLink rel="noreferrer" href={githubLink} target="_blank">
+            GITHUB
+          </GithubLink>
+        </LinksContainer>
       </ContentContainer>
     </MainContainer>
   )

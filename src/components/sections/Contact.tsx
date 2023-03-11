@@ -1,22 +1,26 @@
 /** Libraries */
 import { styled } from '@mui/material/styles'
 
-import PhotoCameraIcon from '@mui/icons-material/PhotoCamera'
+import { Button, TextField, Typography } from '@mui/material'
 
-import Avatar from '@mui/material/Avatar'
-import Stack from '@mui/material/Stack'
-import { Typography } from '@mui/material'
+import { useFormik } from 'formik'
+
+/** Utils */
+import { mailSender, YupContactValidations } from '../../utils'
 
 /** Material UI - Custom components */
 const MainContainer = styled('div')(({ theme }) => ({
   width: '100%',
-  height: '100vh',
-  paddingTop: '4rem',
+  height: 'auto',
+  minHeight: '100vh',
+  padding: '4rem',
   background:
     'linear-gradient(to right,rgba(245,245,245,.8),rgba(245,245,245,.8)),url(https://res.cloudinary.com/the-kings-company/image/upload/v1678147756/Portfolio_v2/common-bg_i9afwm.svg)',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
   [theme.breakpoints.down('sm')]: {
-    // minHeight: '80vh',
-    // overflow: 'contained',
+    padding: '2rem',
   },
 }))
 
@@ -63,7 +67,140 @@ const FontDescription = styled(Typography)(({ theme }) => ({
   },
 }))
 
+const Form = styled('form')(({ theme }) => ({
+  width: '85%',
+  height: 'auto',
+  minHeight: '60vh',
+  marginTop: '5rem',
+  boxShadow: 'rgb(100 100 111 / 20%) 0 7px 29px 0',
+  background: '#fff',
+  borderRadius: '5px',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'space-evenly',
+  gap: '5vh',
+  paddingTop: '5vh',
+  paddingBottom: '5vh',
+  [theme.breakpoints.down('md')]: {
+    width: '100%',
+  },
+}))
+
+const FieldContainer = styled('div')(({ theme }) => ({
+  width: '100%',
+  height: '100%',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center',
+}))
+
+const CustomLabel = styled('label')(({ theme }) => ({
+  width: '87.5%',
+  color: '#666',
+  fontSize: '0.75rem',
+  letterSpacing: '1px',
+  fontWeight: 700,
+  fontFamily: 'Source Sans Pro, sans-serif',
+  marginBottom: '0.5rem',
+  display: 'block',
+  textAlign: 'left',
+}))
+
+const CustomTextField = styled(TextField)(({ theme }) => ({
+  height: 'auto',
+  width: '87.5%',
+  color: '#333',
+  border: '1px solid #ebebeb',
+  letterSpacing: 0,
+  background: '#f0f0f0',
+  borderRadius: '5px',
+
+  '& .css-ovklgm-MuiInputBase-root-MuiOutlinedInput-root': {
+    fontSize: '0.9rem',
+    fontWeight: 700,
+    fontFamily: 'Source Sans Pro, sans-serif',
+  },
+  '& .css-1d3z3hw-MuiOutlinedInput-notchedOutline': {
+    display: 'none',
+  },
+  ':focus-visible': {
+    outline: 'none',
+  },
+}))
+
+const MessageCustomTextField = styled(TextField)(({ theme }) => ({
+  height: 'auto',
+  minHeight: '30vh',
+  width: '87.5%',
+  color: '#333',
+  border: '1px solid #ebebeb',
+  letterSpacing: 0,
+  background: '#f0f0f0',
+  borderRadius: '5px',
+
+  '& .css-iwu91r-MuiInputBase-root-MuiOutlinedInput-root': {
+    fontSize: '0.9rem',
+    fontWeight: 700,
+    fontFamily: 'Source Sans Pro, sans-serif',
+  },
+  '& .css-1d3z3hw-MuiOutlinedInput-notchedOutline': {
+    display: 'none',
+  },
+  ':focus-visible': {
+    outline: 'none',
+  },
+  [theme.breakpoints.down('sm')]: {
+    minHeight: '20vh',
+  },
+}))
+
+const SubmitContainer = styled('div')(({ theme }) => ({
+  width: '87.5%',
+  height: '10vh',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'flex-end',
+  [theme.breakpoints.down('sm')]: {
+    justifyContent: 'center',
+    height: '5vh',
+  },
+}))
+
+const SubmitButton = styled(Button)(({ theme }) => ({
+  width: '20vw',
+  height: '8vh',
+  fontSize: '0.9rem',
+  fontWeight: 750,
+  boxShadow: '0 5px 15px 0 rgb(0 0 0 / 15%)',
+  borderRadius: '5px',
+  color: '#fff',
+  ':hover': {
+    backgroundColor: theme.palette.primary.main,
+    color: '#fff',
+  },
+  [theme.breakpoints.down('sm')]: {
+    width: '100%',
+    height: '3rem',
+  },
+}))
+
 export const Contact = (): JSX.Element => {
+  const formik = useFormik({
+    initialValues: {
+      name: '',
+      email: '',
+      message: '',
+    },
+
+    validationSchema: YupContactValidations,
+    onSubmit: ({ name, email, message }, { resetForm }) => {
+      mailSender({ name, email, message })
+      resetForm()
+    },
+  })
+
   return (
     <MainContainer>
       <FontName id="contact">Contact</FontName>
@@ -71,6 +208,53 @@ export const Contact = (): JSX.Element => {
         Feel free to Contact me by submitting the form below and I will get back
         to you as soon as possible
       </FontDescription>
+      <Form onSubmit={formik.handleSubmit}>
+        <FieldContainer>
+          <CustomLabel htmlFor="name">Name</CustomLabel>
+          <CustomTextField
+            variant="outlined"
+            name="name"
+            autoComplete="name"
+            placeholder="Enter your name"
+            value={formik.values.name}
+            onChange={formik.handleChange}
+            error={formik.touched.name && Boolean(formik.errors.name)}
+            helperText={formik.touched.name && formik.errors.name}
+          />
+        </FieldContainer>
+        <FieldContainer>
+          <CustomLabel htmlFor="email">Email</CustomLabel>
+          <CustomTextField
+            variant="outlined"
+            name="email"
+            autoComplete="email"
+            placeholder="Enter your email"
+            value={formik.values.email}
+            onChange={formik.handleChange}
+            error={formik.touched.email && Boolean(formik.errors.email)}
+            helperText={formik.touched.email && formik.errors.email}
+          />
+        </FieldContainer>
+        <FieldContainer>
+          <CustomLabel htmlFor="message">Message</CustomLabel>
+          <MessageCustomTextField
+            multiline
+            variant="outlined"
+            name="message"
+            autoComplete="message"
+            placeholder="Enter your message"
+            value={formik.values.message}
+            onChange={formik.handleChange}
+            error={formik.touched.message && Boolean(formik.errors.message)}
+            helperText={formik.touched.message && formik.errors.message}
+          />
+        </FieldContainer>
+        <SubmitContainer>
+          <SubmitButton type="submit" variant="contained">
+            Submit
+          </SubmitButton>
+        </SubmitContainer>
+      </Form>
     </MainContainer>
   )
 }

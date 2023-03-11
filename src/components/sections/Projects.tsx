@@ -16,12 +16,6 @@ const MainContainer = styled('div')(({ theme }) => ({
   paddingTop: '5rem',
   display: 'flex',
   flexDirection: 'column',
-  // justifyContent: 'flex-start',
-  // alignItems: 'center',
-  [theme.breakpoints.down('sm')]: {
-    // minHeight: '80vh',
-    // overflow: 'contained',
-  },
 }))
 
 const FontName = styled(Typography)(({ theme }) => ({
@@ -47,10 +41,6 @@ const FontName = styled(Typography)(({ theme }) => ({
     transform: 'translateX(-50%)',
     borderRadius: '5px',
   },
-  [theme.breakpoints.down('sm')]: {
-    // maxWidth: '80%',
-    // fontSize: '2.5rem',
-  },
 }))
 
 const FontDescription = styled(Typography)(({ theme }) => ({
@@ -62,9 +52,6 @@ const FontDescription = styled(Typography)(({ theme }) => ({
   maxWidth: '40rem',
   margin: 'auto',
   lineHeight: '1.6',
-  [theme.breakpoints.down('sm')]: {
-    // marginTop: '2.5vh',
-  },
 }))
 
 const ProjectsContainer = styled('div')(({ theme }) => ({
@@ -75,10 +62,6 @@ const ProjectsContainer = styled('div')(({ theme }) => ({
   flexDirection: 'column',
   justifyContent: 'flex-start',
   alignItems: 'center',
-  [theme.breakpoints.down('sm')]: {
-    // minHeight: '80vh',
-    // overflow: 'contained',
-  },
 }))
 
 export const Projects = (): JSX.Element => {
@@ -86,29 +69,30 @@ export const Projects = (): JSX.Element => {
     <MainContainer>
       <FontName id="projects">PROJECTS</FontName>
       <FontDescription>
-        Here you will find some of the personal and clients projects that I
-        created with each project containing its own case study
+        Here you will find some of the personal projects I created with their
+        demo app and their github repository
       </FontDescription>
       <ProjectsContainer>
         <CardProject
-          title="Dopefolio"
-          description="Dopefolio is a successful Open-Source project that I created which have been featured on some of the biggest tech sites like CSS-Tricks, Hostinger, etc & used by thousands of developers globally"
-          img="https://res.cloudinary.com/the-kings-company/image/upload/v1678147624/Portfolio_v2/project-mockup-example_joddyq.jpg"
+          title="Ecommerce"
+          description="This is a classic ecommerce or virtual store where a company can sell its products. This project is related to the Dashboard project."
+          img="https://res.cloudinary.com/the-kings-company/image/upload/v1678562173/Portfolio_v2/projects/ecommerce_w5ehm7.png"
+          demoLink="https://my-ecommerce-app-vite.netlify.app/"
+          githubLink="https://github.com/lucasgojeda/eccomerce-app-frontend-vite"
         />
         <CardProject
-          title="Wilsonport"
-          description="Wilsonport is a multiservice logistics and transport company and I created their website from scratch using the frontend tools I know."
-          img="https://res.cloudinary.com/the-kings-company/image/upload/v1678147624/Portfolio_v2/project-mockup-example_joddyq.jpg"
+          title="Dashboard"
+          description="This is a dashboard for an ecommerce or a virtual store. This project is related to the Ecommerce project."
+          img="https://res.cloudinary.com/the-kings-company/image/upload/v1678562172/Portfolio_v2/projects/dashboard_eyf3s8.png"
+          demoLink="https://my-eccomerce-dashboard.netlify.app/"
+          githubLink="https://github.com/lucasgojeda/eccomerce-app-dashboard"
         />
         <CardProject
-          title="Boreal Coffee Clone"
-          description="I re-created the frontend of Boreal Coffee's official web app because I got attracted to their beautiful UI. It was a great experience for me to build the entire frontend."
-          img="https://res.cloudinary.com/the-kings-company/image/upload/v1678147624/Portfolio_v2/project-mockup-example_joddyq.jpg"
-        />
-        <CardProject
-          title="Crown Template"
-          description="Crown is a web template that I created targeting the restaurant and food industry which anyone can use to present their business online."
-          img="https://res.cloudinary.com/the-kings-company/image/upload/v1678147624/Portfolio_v2/project-mockup-example_joddyq.jpg"
+          title="Virtual wallet"
+          description="This is a virtual wallet project that I created with a team of people through a training on agile methodology and react js."
+          img="https://res.cloudinary.com/the-kings-company/image/upload/v1678562172/Portfolio_v2/projects/alkybank_gnq0qn.png"
+          demoLink="https://alkybank-wallet.netlify.app/"
+          githubLink="https://github.com/lucasgojeda/alkybank"
         />
       </ProjectsContainer>
     </MainContainer>

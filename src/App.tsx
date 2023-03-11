@@ -1,9 +1,13 @@
 /** Libraries */
+import { useEffect } from 'react'
 import { styled } from '@mui/material/styles'
 import { About, Contact, Home, Projects } from './components/sections'
 
 /** Components */
 import { Footer, Navbar } from './components/ui'
+
+/** Utils */
+import { pingToEmailSender, pingToEcommerceBack } from './utils'
 
 /** Material UI - Custom components */
 const MainContainer = styled('div')(({ theme }) => ({
@@ -13,6 +17,10 @@ const MainContainer = styled('div')(({ theme }) => ({
 }))
 
 function App() {
+  useEffect(() => {
+    pingToEmailSender()
+    pingToEcommerceBack()
+  }, [])
   return (
     <MainContainer>
       <Navbar />

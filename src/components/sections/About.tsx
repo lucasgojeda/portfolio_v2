@@ -195,25 +195,46 @@ export const About = (): JSX.Element => {
         <ContentContainer>
           <FontSubtitle>Get to know me!</FontSubtitle>
           <FontText>
-            I'm a <strong>Frontend Web Developer </strong> building the
-            Front-end of Websites and Web Applications that leads to the success
-            of the overall product. Check out some of my work in the{' '}
-            <strong>Projects</strong> section.
+            More than <strong>two years</strong> learning web development and
+            making projects.
           </FontText>
           <FontText>
-            I also like sharing content related to the stuff that I have learned
-            over the years in <strong>Web Development</strong> so it can help
-            other people of the Dev Community. Feel free to Connect or Follow me
-            on my{' '}
+            I'm a native <strong>spanish speaker</strong> and I have
+            <strong> conversacional english</strong> .
+          </FontText>
+          <FontText>
+            If I'm not being active on my{' '}
+            <a
+              rel="noreferrer"
+              href="https://github.com/lucasgojeda"
+              target="_blank"
+            >
+              github account
+            </a>
+            , that's because I'm being active on my{' '}
+            <a
+              rel="noreferrer"
+              href="https://github.com/Making-projects-and-learning"
+              target="_blank"
+            >
+              github organization
+            </a>{' '}
+            where I colaborate with people all over the world to create
+            interesting projects.
+          </FontText>
+          <FontText>
+            Feel free to Connect or Follow me on my{' '}
             <a
               rel="noreferrer"
               href="https://www.linkedin.com/in/lucas-ojeda-a03372225/"
               target="_blank"
             >
               Linkedin
-            </a>{' '}
-            where I post useful content related to Web Development and
-            Programming
+            </a>
+            .
+          </FontText>
+          <FontText>
+            Check out some of my work in the <strong>Projects</strong> section.
           </FontText>
           <FontText>
             I'm open to <strong>Job</strong> opportunities where I can
@@ -238,6 +259,10 @@ export const About = (): JSX.Element => {
             </TenologyContainer>
 
             <TenologyContainer>
+              <FontTecnology>SASS</FontTecnology>
+            </TenologyContainer>
+
+            <TenologyContainer>
               <FontTecnology>JAVASCRIPT</FontTecnology>
             </TenologyContainer>
 
@@ -255,6 +280,58 @@ export const About = (): JSX.Element => {
 
             <TenologyContainer>
               <FontTecnology>NODE</FontTecnology>
+            </TenologyContainer>
+
+            <TenologyContainer>
+              <FontTecnology>EXPRESS</FontTecnology>
+            </TenologyContainer>
+
+            <TenologyContainer>
+              <FontTecnology>MONGODB</FontTecnology>
+            </TenologyContainer>
+
+            <TenologyContainer>
+              <FontTecnology>MONGOOSE</FontTecnology>
+            </TenologyContainer>
+
+            <TenologyContainer>
+              <FontTecnology>WEBSOCKETS</FontTecnology>
+            </TenologyContainer>
+
+            <TenologyContainer>
+              <FontTecnology>GITHUB</FontTecnology>
+            </TenologyContainer>
+
+            <TenologyContainer>
+              <FontTecnology>AGILE METHOLOGY</FontTecnology>
+            </TenologyContainer>
+
+            <TenologyContainer>
+              <FontTecnology>KANBAN METHOLOGY</FontTecnology>
+            </TenologyContainer>
+
+            <TenologyContainer>
+              <FontTecnology>JIRA</FontTecnology>
+            </TenologyContainer>
+
+            <TenologyContainer>
+              <FontTecnology>TRELLO</FontTecnology>
+            </TenologyContainer>
+
+            <TenologyContainer>
+              <FontTecnology>NETLIFY</FontTecnology>
+            </TenologyContainer>
+
+            <TenologyContainer>
+              <FontTecnology>HEROKU</FontTecnology>
+            </TenologyContainer>
+
+            <TenologyContainer>
+              <FontTecnology>MONGODB ATLAS</FontTecnology>
+            </TenologyContainer>
+
+            <TenologyContainer>
+              <FontTecnology>CLOUDINARY</FontTecnology>
             </TenologyContainer>
           </TenologiesContainer>
         </SkillsContainer>

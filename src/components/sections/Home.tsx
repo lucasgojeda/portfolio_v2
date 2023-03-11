@@ -26,6 +26,9 @@ const HomeContainer = styled('div')(({ theme }) => ({
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'space-evenly',
+  [theme.breakpoints.down('md')]: {
+    width: '95%',
+  },
   [theme.breakpoints.down('sm')]: {
     marginTop: '10vh',
     width: '90%',
@@ -36,15 +39,19 @@ const FontName = styled(Typography)(({ theme }) => ({
   display: 'inline-block',
   textDecoration: 'none',
   textAlign: 'start',
-  fontSize: '70px',
+  fontSize: '4.25rem',
   color: '#000',
   fontFamily: 'Source Sans Pro, sans-serif',
   textTransform: 'uppercase',
   letterSpacing: '1px',
   fontWeight: 700,
+  [theme.breakpoints.down('md')]: {
+    fontSize: '3.4rem',
+  },
   [theme.breakpoints.down('sm')]: {
-    maxWidth: '80%',
+    maxWidth: '90%',
     fontSize: '2.5rem',
+    textAlign: 'center',
   },
 }))
 
@@ -56,7 +63,13 @@ const FontDescription = styled(Typography)(({ theme }) => ({
   color: '#000',
   fontFamily: 'inherit',
   letterSpacing: '1px',
+  maxWidth: '80%',
+  [theme.breakpoints.down('md')]: {
+    maxWidth: '70%',
+    fontSize: '1.2rem',
+  },
   [theme.breakpoints.down('sm')]: {
+    maxWidth: '70%',
     marginTop: '2.5vh',
   },
 }))
@@ -90,8 +103,9 @@ export const Home = (): JSX.Element => {
       <HomeContainer>
         <FontName>HEY, I'M LUCAS OJEDA</FontName>
         <FontDescription>
-          A Frontend focused Web Developer building the Frontend of Websites and
-          Web Applications that leads to the success of the overall product
+          A FullStack web developer focused on building the frontend and backend
+          of websites and web applications leading to the success of the overall
+          product.
         </FontDescription>
         <ButtonProjects variant="contained" onClick={handleProjectsButton}>
           PROJECTS

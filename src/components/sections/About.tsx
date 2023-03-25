@@ -200,7 +200,7 @@ export const About = (): JSX.Element => {
           </FontText>
           <FontText>
             I'm a native <strong>spanish speaker</strong> and I have
-            <strong> conversacional english</strong> .
+            <strong> conversational english</strong> .
           </FontText>
           <FontText>
             If I'm not being active on my{' '}
@@ -221,6 +221,18 @@ export const About = (): JSX.Element => {
             </a>{' '}
             where I colaborate with people all over the world to create
             interesting projects.
+          </FontText>
+          <FontText>
+            Or maybe I'm in a meeting with my friend{' '}
+            <a
+              rel="noreferrer"
+              href="https://www.linkedin.com/in/mohamed-el-omary-638386119/"
+              target="_blank"
+            >
+              Mohamed
+            </a>{' '}
+            talking about the <strong>social network</strong> project which we
+            are currently working on.
           </FontText>
           <FontText>
             Feel free to Connect or Follow me on my{' '}

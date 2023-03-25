@@ -4,7 +4,7 @@ import { styled } from '@mui/material/styles'
 import { About, Contact, Home, Projects } from './components/sections'
 
 /** Components */
-import { Footer, Navbar } from './components/ui'
+import { Footer, Navbar, ResumeButton } from './components/ui'
 
 /** Utils */
 import {
@@ -32,6 +32,7 @@ function App() {
     <MainContainer>
       <Navbar />
       <Home />
+      <ResumeButton />
       <About />
       <Projects />
       <Contact />

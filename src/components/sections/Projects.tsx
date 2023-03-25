@@ -43,6 +43,41 @@ const FontName = styled(Typography)(({ theme }) => ({
   },
 }))
 
+const SubtitleContainer = styled('div')(({ theme }) => ({
+  width: '100%',
+  minHeight: '5vh',
+  paddingLeft: '2vw',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+}))
+
+const FontSubtitle = styled(Typography)(({ theme }) => ({
+  display: 'block',
+  textDecoration: 'none',
+  fontSize: '1.5rem',
+  marginTop: '2rem',
+  marginBottom: '2rem',
+  fontFamily: 'Source Sans Pro, sans-serif',
+  textTransform: 'uppercase',
+  fontWeight: 700,
+  letterSpacing: '3px',
+  textAlign: 'center',
+  position: 'relative',
+  color: '#111',
+  ':after': {
+    content: '""',
+    position: 'absolute',
+    top: '100%',
+    height: '4px',
+    width: '100%',
+    background: theme.palette.primary.main,
+    left: '50%',
+    transform: 'translateX(-50%)',
+    borderRadius: '5px',
+  },
+}))
+
 const FontDescription = styled(Typography)(({ theme }) => ({
   display: 'block',
   textAlign: 'center',
@@ -73,26 +108,69 @@ export const Projects = (): JSX.Element => {
         demo app and their github repository
       </FontDescription>
       <ProjectsContainer>
+        <SubtitleContainer>
+          <FontSubtitle>BEST PROJECTS</FontSubtitle>
+        </SubtitleContainer>
+        <CardProject
+          title="Social Network"
+          description="This is a basic social network made using socket.io and socket.io-client. The post section is completed but the app it's still in process."
+          img="https://res.cloudinary.com/the-kings-company/image/upload/v1679760029/Portfolio_v2/projects/mobile_2_vi7oup.png"
+          demoLink="https://social-network-basic.netlify.app/"
+          githubFrontLink="https://github.com/Making-projects-and-learning/socialMedia-FE"
+          githubBackLink="https://github.com/Making-projects-and-learning/social-media-backend"
+        />
         <CardProject
           title="Ecommerce"
           description="This is a classic ecommerce or virtual store where a company can sell its products. This project is related to the Dashboard project."
-          img="https://res.cloudinary.com/the-kings-company/image/upload/v1678562173/Portfolio_v2/projects/ecommerce_w5ehm7.png"
+          img="https://res.cloudinary.com/the-kings-company/image/upload/v1679759807/Portfolio_v2/projects/mobile_1_detjyc.png"
           demoLink="https://my-ecommerce-app-vite.netlify.app/"
-          githubLink="https://github.com/lucasgojeda/eccomerce-app-frontend-vite"
+          githubFrontLink="https://github.com/lucasgojeda/eccomerce-app-frontend-vite"
+          githubBackLink="https://github.com/lucasgojeda/eccomerce-app-backend"
         />
         <CardProject
           title="Dashboard"
           description="This is a dashboard for an ecommerce or a virtual store. This project is related to the Ecommerce project."
           img="https://res.cloudinary.com/the-kings-company/image/upload/v1678562172/Portfolio_v2/projects/dashboard_eyf3s8.png"
           demoLink="https://my-eccomerce-dashboard.netlify.app/"
-          githubLink="https://github.com/lucasgojeda/eccomerce-app-dashboard"
+          githubFrontLink="https://github.com/lucasgojeda/eccomerce-app-dashboard"
+          githubBackLink="https://github.com/lucasgojeda/eccomerce-app-backend"
         />
+        <FontSubtitle>SIMPLE PROJECTS</FontSubtitle>
         <CardProject
           title="Virtual wallet"
           description="This is a virtual wallet project that I created with a team of people through a training on agile methodology and react js."
-          img="https://res.cloudinary.com/the-kings-company/image/upload/v1678562172/Portfolio_v2/projects/alkybank_gnq0qn.png"
+          img="https://res.cloudinary.com/the-kings-company/image/upload/v1679763384/Portfolio_v2/projects/mobile_3_dyqstu.png"
           demoLink="https://alkybank-wallet.netlify.app/"
-          githubLink="https://github.com/lucasgojeda/alkybank"
+          githubFrontLink="https://github.com/lucasgojeda/alkybank"
+        />
+        <CardProject
+          title="Calendar App"
+          description="Calendar application to schedule appointments."
+          img="https://res.cloudinary.com/the-kings-company/image/upload/v1679763593/Portfolio_v2/projects/mobile_4_sgsuwq.png"
+          demoLink="https://my-calendar-app-vite.netlify.app/"
+          githubFrontLink="https://github.com/lucasgojeda/front-calendar-app-vite"
+          githubBackLink="https://github.com/lucasgojeda/back-calendar-app-vite"
+        />
+        <CardProject
+          title="Journal App"
+          description="An aweasome a app where you can save important information in notes."
+          img="https://res.cloudinary.com/the-kings-company/image/upload/v1679763762/Portfolio_v2/projects/mobile_5_elmohp.png"
+          demoLink="https://my-journal-app-vite.netlify.app/"
+          githubFrontLink="https://github.com/lucasgojeda/journal-app-vite"
+        />
+        <CardProject
+          title="Heroes App"
+          description="This is an app where you can find information and images your heroes."
+          img="https://res.cloudinary.com/the-kings-company/image/upload/v1679763866/Portfolio_v2/projects/mobile_6_tqeqjn.png"
+          demoLink="https://my-heroes-app.netlify.app/"
+          githubFrontLink="https://github.com/lucasgojeda/heroes-app-vite"
+        />
+        <CardProject
+          title="Gif Expert App"
+          description="Gif search engine consumed from a public API."
+          img="https://res.cloudinary.com/the-kings-company/image/upload/v1679763967/Portfolio_v2/projects/mobile_7_ouy5yp.png"
+          demoLink="https://my-gif-expert-app.netlify.app/"
+          githubFrontLink="https://github.com/lucasgojeda/git-expert-app-vite"
         />
       </ProjectsContainer>
     </MainContainer>

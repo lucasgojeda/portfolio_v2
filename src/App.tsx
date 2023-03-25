@@ -7,7 +7,12 @@ import { About, Contact, Home, Projects } from './components/sections'
 import { Footer, Navbar } from './components/ui'
 
 /** Utils */
-import { pingToEmailSender, pingToEcommerceBack } from './utils'
+import {
+  pingToEmailSender,
+  pingToEcommerceBack,
+  pingToSocialNetworkBack,
+  pingToCalendarBack,
+} from './utils'
 
 /** Material UI - Custom components */
 const MainContainer = styled('div')(({ theme }) => ({
@@ -20,6 +25,8 @@ function App() {
   useEffect(() => {
     pingToEmailSender()
     pingToEcommerceBack()
+    pingToCalendarBack()
+    pingToSocialNetworkBack()
   }, [])
   return (
     <MainContainer>
